@@ -14,7 +14,7 @@
 
       <h3 class="text-green-600 mt-8 font-semibold mb-6">{{ message2 }}</h3>
 <!-- data-netlify-recaptcha="true" -->
-      <form  @submit.prevent="handleSubmit"  class="w-full" action="post"   name="contact" data-netlify="true">
+      <form  @submit.prevent="handleSubmit($event)"  class="w-full" action="post"   name="contact" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <div class="flex flex-wrap -mx-4">
           <div class="w-full md:w-1/2 px-4 mb-5">
