@@ -93,7 +93,7 @@ export default {
         )
         .join('&');
     },
-      handleSubmit() {
+      handleSubmit(event) {
      
         fetch('/contact',{
           method : 'post',
