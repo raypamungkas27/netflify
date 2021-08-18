@@ -13,8 +13,8 @@
       <span class="block mt-1 w-10 h-1 bg-green-700"></span>
 
       <h3 class="text-green-600 mt-8 font-semibold mb-6">{{ message }}</h3>
-<!-- data-netlify-recaptcha="true" -->
-      <form  @submit.prevent="handleSubmit"  class="w-full" action="post"   name="contact" data-netlify="true">
+
+      <form  @submit.prevent="handleSubmit"  class="w-full" action="post" data-netlify-recaptcha="true"   name="contact" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <div class="flex flex-wrap -mx-4">
           <div class="w-full md:w-1/2 px-4 mb-5">
@@ -61,7 +61,7 @@
             ></textarea>
           </div>
         </div>
-        <!-- <div data-netlify-recaptcha="true"></div> -->
+        <div data-netlify-recaptcha="true"></div>
         <div class="flex justify-end w-full">
           <button
             type="submit"
@@ -105,7 +105,8 @@ export default {
             ...this.form
           })
         })
-        .then(() => {
+        .then((response) => {
+          console.log(response)
           this.message ='Thank you for getting in touch! We appreciate you contacting us'
           event.target.reset()
         })
