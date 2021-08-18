@@ -14,7 +14,7 @@
 
       <h3 class="text-green-600 mt-8 font-semibold mb-6">{{ message }}</h3>
 
-      <form   class="w-full" action="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form   class="w-full" action="post"  data-netlify-recaptcha="true" name="contact" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <div class="flex flex-wrap -mx-4">
           <div class="w-full md:w-1/2 px-4 mb-5">
@@ -58,6 +58,7 @@
             ></textarea>
           </div>
         </div>
+        <div data-netlify-recaptcha="true"></div>
         <div class="flex justify-end w-full">
           <button
             type="submit"
