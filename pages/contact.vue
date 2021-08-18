@@ -107,8 +107,9 @@ export default {
           })
         })
         .then(() => {
-          this.message2 ='Thank you for getting in touch! We appreciate you contacting us'
           event.target.reset()
+          this.message2 ='Thank you for getting in touch! We appreciate you contacting us'
+
         })
         .catch(e => console.error(e))
       }
