@@ -27,6 +27,7 @@
               name="name"
               placeholder="Enter your full name"
               required="required"
+              v-model="form.name"
               class="dark:bg-dark-light dark:border-dark-light block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-green-700 dark:focus:border-green-700 mb-2 p-4"
             />
           </div>
@@ -38,6 +39,7 @@
               id="email"
               type="email"
               name="email"
+              v-model="form.email"
               placeholder="Enter your email"
               required="required"
               class="dark:bg-dark-light dark:border-dark-light block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-green-700 dark:focus:border-green-700 mb-2 p-4"
@@ -52,6 +54,7 @@
               rows="6"
               type="text"
               name="message"
+              v-model="form.message"
               placeholder="Enter your message"
               required="required"
               class="dark:bg-dark-light dark:border-dark-light block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-green-700 dark:focus:border-green-700 mb-2 p-4"
@@ -74,15 +77,14 @@
 
 <script>
 export default {
-  data() {
-    return {
-      form: {
-              name: "",
-              email: "",
-              message: ""
-            }
+  name: 'Basic',
+  data: () => ({
+    form : {
+      name: '',
+      email: '',
+      message: '',
     }
-  },
+  }),
   methods: {
       encode(){
         return Object.keys(data)
