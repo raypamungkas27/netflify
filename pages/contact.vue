@@ -82,38 +82,25 @@ export default {
     }
   },
   methods: {
-        encode(data) {
+      encode(){
         return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&")
-  },
-  handleSubmit(event){
-  event.preventDefault()
-  fetch("/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({
-      "form-name": event.target.getAttribute("name"),
-      ...name
-    })
-  }).then(() => console.log("asdsad")).catch(error => alert(error))
-}
-    // submit(event) {
-
-    //   message ='Thank you for getting in touch! We appreciate you contacting us'
-    //   event.target.reset()
-    //   var data = new FormData(event.target)
-    //   this.$axios
-    //     .$post('https://formspree.io/f/xbjqpdee', data)
-    //     .then((response) => {
-    //       this.message =
-    //         'Thank you for getting in touch! We appreciate you contacting us'
-    //       event.target.reset()
-    //     })
-    //     .then((response) => {
-    //       console.log(response)
-    //     })
-    // },
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      },
+      handleSubmit() {
+     
+        fetch('/',{
+          method : 'post',
+          headers : {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body :this.encode({
+            'form-name' : 'contanct',
+            ...this.form
+          })
+        })
+        .then(() => console.log("success"))
+        .catch(e => console.error(e))
+      }
   },
 }
 </script>
