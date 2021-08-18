@@ -12,7 +12,7 @@
       </h1>
       <span class="block mt-1 w-10 h-1 bg-green-700"></span>
 
-      <h3 class="text-green-600 mt-8 font-semibold mb-6">{{ message }}</h3>
+      <h3 class="text-green-600 mt-8 font-semibold mb-6">{{ message2 }}</h3>
 <!-- data-netlify-recaptcha="true" -->
       <form  @submit.prevent="handleSubmit"  class="w-full" action="post"   name="contact" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
@@ -78,7 +78,8 @@
 <script>
 export default {
   name: 'Basic',
-  data: () => ({  
+  data: () => ({
+    message2 : '',  
     form: {
       name: '',
       email: '',
@@ -106,7 +107,7 @@ export default {
           })
         })
         .then(() => {
-          this.message ='Thank you for getting in touch! We appreciate you contacting us'
+          this.message2 ='Thank you for getting in touch! We appreciate you contacting us'
           event.target.reset()
         })
         .catch(e => console.error(e))
