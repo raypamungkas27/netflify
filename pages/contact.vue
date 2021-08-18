@@ -78,18 +78,21 @@
 <script>
 export default {
   name: 'Basic',
-  data: () => ({
-    form : {
+  data: () => ({  
+    form: {
       name: '',
       email: '',
       message: '',
-    }
+    },
   }),
   methods: {
-      encode(){
-        return Object.keys(data)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-      },
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`,
+        )
+        .join('&');
+    },
       handleSubmit() {
      
         fetch('/',{
