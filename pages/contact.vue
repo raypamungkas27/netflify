@@ -14,7 +14,7 @@
 
       <h3 class="text-green-600 mt-8 font-semibold mb-6">{{ message }}</h3>
 
-      <form  @submit.prevent="handleSubmit" class="w-full" action="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form   class="w-full" action="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
         <div class="flex flex-wrap -mx-4">
           <div class="w-full md:w-1/2 px-4 mb-5">
