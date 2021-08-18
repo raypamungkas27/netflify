@@ -95,7 +95,7 @@ export default {
     },
       handleSubmit() {
      
-        fetch('/',{
+        fetch('/contact',{
           method : 'post',
           headers : {
             'Content-Type': 'application/x-www-form-urlencoded'
