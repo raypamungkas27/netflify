@@ -76,14 +76,16 @@
 export default {
   data() {
     return {
-      name: '',
-      email: '',
-      message: '',
+      form: {
+              name: "",
+              email: "",
+              message: ""
+            }
     }
   },
   methods: {
       encode(){
-        return Object.keys(this.data)
+        return Object.keys(data)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
       },
       handleSubmit() {
