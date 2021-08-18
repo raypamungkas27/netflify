@@ -105,7 +105,10 @@ export default {
             ...this.form
           })
         })
-        .then(() => console.log("success"))
+        .then(() => {
+          this.message ='Thank you for getting in touch! We appreciate you contacting us'
+          event.target.reset()
+        })
         .catch(e => console.error(e))
       }
   },
