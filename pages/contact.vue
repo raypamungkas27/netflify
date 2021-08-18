@@ -83,7 +83,7 @@ export default {
   },
   methods: {
       encode(){
-        return Object.keys(data)
+        return Object.keys(this.data)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
       },
       handleSubmit() {
