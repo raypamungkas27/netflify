@@ -8,7 +8,7 @@
       <h1
         class="dark:text-gray-200 text-left text-3xl font-medium title-font text-gray-900"
       >
-        Contact Meee
+        Contact Me
       </h1>
       <span class="block mt-1 w-10 h-1 bg-green-700"></span>
 
