@@ -14,7 +14,7 @@
 
       <h3 class="text-green-600 mt-8 font-semibold mb-6">{{ message }}</h3>
 
-      <form   class="w-full" action="post"  data-netlify-recaptcha="true" name="contact" data-netlify="true">
+      <form  @submit.prevent="handleSubmit"  class="w-full" action="post"  data-netlify-recaptcha="true" name="contact" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <div class="flex flex-wrap -mx-4">
           <div class="w-full md:w-1/2 px-4 mb-5">
@@ -82,11 +82,22 @@ export default {
     }
   },
   methods: {
-    handleSubmit(event) {
-      console.log("success")
-      this.message ='Thank you for getting in touch! We appreciate you contacting us'
-      event.target.reset()
-    },
+        encode(data) {
+        return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&")
+  },
+  handleSubmit(event){
+  event.preventDefault()
+  fetch("/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({
+      "form-name": event.target.getAttribute("name"),
+      ...name
+    })
+  }).then(() => console.log("asdsad")).catch(error => alert(error))
+}
     // submit(event) {
 
     //   message ='Thank you for getting in touch! We appreciate you contacting us'
