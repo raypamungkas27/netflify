@@ -8,7 +8,7 @@
       <h1
         class="dark:text-gray-200 text-left text-3xl font-medium title-font text-gray-900"
       >
-        Contact Me
+        Contact Meee
       </h1>
       <span class="block mt-1 w-10 h-1 bg-green-700"></span>
 
@@ -22,9 +22,9 @@
               Full Name
             </label>
             <input
-              id="fullName"
+              id="name"
               type="text"
-              name="fullName"
+              name="name"
               placeholder="Enter your full name"
               required="required"
               class="dark:bg-dark-light dark:border-dark-light block w-full bg-background-form border border-border-color-primary shadow rounded outline-none focus:border-green-700 dark:focus:border-green-700 mb-2 p-4"
@@ -75,7 +75,7 @@
 export default {
   data() {
     return {
-      fullName: '',
+      name: '',
       email: '',
       message: '',
     }
